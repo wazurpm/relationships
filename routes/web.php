@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Comment;
 use App\Models\Phone;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -10,7 +12,7 @@ Route::get('/', function () {
 
 Route::get('prueba', function () {
     
-    $phone = Phone::find(1);
+    $post = Post::find(2);
 
-    return $phone->user;
+    return $post->comments;
 });
