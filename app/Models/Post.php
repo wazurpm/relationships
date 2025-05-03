@@ -11,8 +11,15 @@ class Post extends Model
         'title', 'content'
     ];
 
+    // Relación uno a muchos
     public function comments()
     {
         return $this->HasMany(Comment::class);
+    }
+
+    // Relación muchos a muchos
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 }

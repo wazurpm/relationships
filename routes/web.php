@@ -12,7 +12,10 @@ Route::get('/', function () {
 
 Route::get('prueba', function () {
     
-    $post = Post::find(2);
+    $user = User::find(1);
+    // $user->phone()->create([
+    //     'number' => '987654321'
+    // ]);
 
-    return $post->comments;
+    return $user->phone;
 });
