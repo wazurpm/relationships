@@ -8,11 +8,17 @@ class Comment extends Model
 {
     protected $fillable = [
         'content',
-        'post_id'
+        'commentable_type',
+        'commentable_id'
     ];
 
-    public function post()
+    /* public function post()
     {
         return $this->belongsTo(Post::class);
+    } */
+
+    public function commentable()
+    {
+        return $this->morphTo();
     }
 }
