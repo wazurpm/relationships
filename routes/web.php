@@ -12,7 +12,9 @@ Route::get('/', function () {
 
 Route::get('prueba', function () {
     
-    $comment = Comment::find(1);
+    $post = Post::find(2);
 
-    return $comment->commentable;
+    $post->tags()->attach([1, 3]);
+
+    return $post->tags;
 });

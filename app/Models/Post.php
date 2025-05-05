@@ -20,6 +20,6 @@ class Post extends Model
     // Relación muchos a muchos
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 }
